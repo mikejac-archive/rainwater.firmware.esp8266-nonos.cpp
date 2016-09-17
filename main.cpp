@@ -181,12 +181,21 @@ void ICACHE_FLASH_ATTR task1(os_event_t* e)
         }
     }
 
-    if(Button_Run(&button) == Button_Short) {
-        DTXT("Button short press\n");
-        Info(mqtt, "Button short press");
-        buttonShortPress();
+    switch(Button_Run(&button)) {
+        case Button_None:
+            break;
+            
+        case Button_Short:
+            DTXT("Button short press\n");
+            buttonShortPress();
+            break;
+            
+        case Button_Long:
+            DTXT("Button long press - restart\n");
+            system_restart();
+            break;
     }
-
+    
     Blinker_Run(&buttonLED);
 
     /******************************************************************************************************************
@@ -502,7 +511,7 @@ void ICACHE_FLASH_ATTR main_init_done(void)
 
     Button_Initialize(&button, GPIO_BUTTON, 1);
     Button_SetShortPress(&button, 300);
-    Button_SetLongPress(&button, 2000);
+    Button_SetLongPress(&button, 5000);
 
     waterLevelInitialize(&waterLevel, GPIO_WATER_LEVEL);
     

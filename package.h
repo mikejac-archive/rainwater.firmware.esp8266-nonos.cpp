@@ -36,7 +36,7 @@ extern "C" {
  *
  */
 #define PKG_ID                  "RWNO"      // must match UPGRADER_PKGID in Makefile
-#define PKG_VERSION             18          // must match version given to "./deploy ota"
+#define PKG_VERSION             19          // must match version given to "./deploy ota"
 
 #ifdef __cplusplus
 }
