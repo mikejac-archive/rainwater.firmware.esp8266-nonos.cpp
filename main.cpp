@@ -204,7 +204,7 @@ void ICACHE_FLASH_ATTR task1(os_event_t* e)
      */
     if(expired(&periodicInterval)) {
         Info(mqtt, "Running");
-        
+
         countdown(&periodicInterval, PERIODIC_INTERVAL);
     }
     

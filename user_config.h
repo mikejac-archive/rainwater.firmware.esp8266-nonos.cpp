@@ -49,7 +49,7 @@
 #define MY_PLATFORM_ID          "rainwater"
 
 // external nodenames
-#define NODENAME_CHRONOS        "e03fe8f6-ad55-455f-9039-2a9fd7d9eec5"
+#define NODENAME_CHRONOS        "134806d8-f9e6-43dd-9f0c-bbb1634dc956"
 #define NODENAME_UPGRADER       "f330b8cb-e559-4590-bae0-d079b1b5e7e4"
 
 /******************************************************************************************************************
